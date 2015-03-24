@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hywilliam&#39;s Blog</title>
+  <title>JavaScript语言核心学习（类型，值和变量） | hywilliam&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hywilliam's Blog">
-<meta property="og:url" content="http://hywilliam.com/index.html">
+  <meta name="description" content="接触前端有一段时间了，却一直也没有花整块儿的时间对JS核心做深入学习。所以这次打算把犀牛书彻底啃下来。对一些核心知识点做个系统总结，还能顺带提升下写blog的软技能。
+本文主要整理了JS中的类型，值，变量相关问题。废话不多说，直接上图。
+
+类型
+JavaScript的数据类型分为两类：原始类型(Primitive Type)和对象类型(Object Type)。
+原始类型也即所谓原始值。它们是不能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript语言核心学习（类型，值和变量）">
+<meta property="og:url" content="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/index.html">
 <meta property="og:site_name" content="hywilliam's Blog">
-<meta property="og:description" content="Personal Blog">
+<meta property="og:description" content="接触前端有一段时间了，却一直也没有花整块儿的时间对JS核心做深入学习。所以这次打算把犀牛书彻底啃下来。对一些核心知识点做个系统总结，还能顺带提升下写blog的软技能。
+本文主要整理了JS中的类型，值，变量相关问题。废话不多说，直接上图。
+
+类型
+JavaScript的数据类型分为两类：原始类型(Primitive Type)和对象类型(Object Type)。
+原始类型也即所谓原始值。它们是不能">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/7NIU_Post001_JSType.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hywilliam's Blog">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="JavaScript语言核心学习（类型，值和变量）">
+<meta name="twitter:description" content="接触前端有一段时间了，却一直也没有花整块儿的时间对JS核心做深入学习。所以这次打算把犀牛书彻底啃下来。对一些核心知识点做个系统总结，还能顺带提升下写blog的软技能。
+本文主要整理了JS中的类型，值，变量相关问题。废话不多说，直接上图。
+
+类型
+JavaScript的数据类型分为两类：原始类型(Primitive Type)和对象类型(Object Type)。
+原始类型也即所谓原始值。它们是不能">
 
   
     <link rel="alternative" href="/atom.xml" title="hywilliam&#39;s Blog" type="application/atom+xml">
@@ -61,9 +77,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-JavaScript语言核心学习（类型，值和变量）" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaScript语言核心学习（类型，值和变量）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" class="article-date">
   <time datetime="2015-03-24T13:38:03.000Z" itemprop="datePublished">2015-03-24</time>
@@ -80,8 +94,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/24/JavaScript语言核心学习（类型，值和变量）/">JavaScript语言核心学习（类型，值和变量）</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript语言核心学习（类型，值和变量）
     </h1>
   
 
@@ -140,56 +154,20 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/04/hello-world/" class="article-date">
-  <time datetime="2015-03-04T05:36:03.000Z" itemprop="datePublished">2015-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/04/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2015/03/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/04/hello-world/" data-id="ci7nhlk340000wv5oeu55fo2z" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">
