@@ -123,7 +123,8 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
 <span class="keyword">var</span> t = s.bar;          <span class="comment">//undefined</span>
 </code></pre><p>可是为什么呢？<br>其实执行过程是这样的：当引用字符串s的属性时，JavaScript就会将字符串通过调用 <code>new String(s)</code>方式转换为对象，这个对象是继承字符串的所有方法和属性的。但是这只是个临时对象，一旦引用结束，这个刚刚创建的对象也就销毁了。所以，给s添加属性，并不会抱错，但是等到下一次你再想访问时，那个你添过属性或方法的对象早已不存在了。当然也就访问不到了。也即：修改只是发生在临时对象身上，而临时对象并没有保存下来。</p>
 <p>这个临时对象，便是所谓的包装对象。一般来讲，包装对象的过程是一个实现细节，是隐式的。你也可以通过<code>Number(),String(),Boolean()</code>构造函数来显式创建包装对象。但好像实际应用中意义并不是很大。但这对理解JavaScript万事皆对象有一定帮助。</p>
-<h1 id="变量">变量</h1><p>这里想说一下命名提升。因为这发生在变量的声明过程。</p>
+<h1 id="变量">变量</h1><hr>
+<p>这里想说一下命名提升。因为这发生在变量的声明过程。</p>
 <pre><code><span class="keyword">var</span> a = <span class="string">'global'</span>;
 <span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span> </span>{
     <span class="built_in">console</span>.log(a);    <span class="comment">//==undefined</span>
@@ -146,7 +147,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7oz03yx0001re5obicwhe4n" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7ozdtp60001t65obomxapux" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
