@@ -94,15 +94,14 @@
 <p>上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。</p>
 <p><strong>其中:</strong></p>
 <p><strong>有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。</strong></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">MDN的数组文档</a>是相当详细，所以各个方法，不再一一解释。</p>
-<p>方法虽然可以翻阅文档，但是重在理解和使用。遇到什么情况，采取哪种更加合适的方法往往很重要。</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">MDN的数组文档</a>是相当详细的，所以各个方法，不再一一解释。方法虽然可以翻阅文档，但是重在理解和使用。遇到什么情况，采取哪种更加合适的方法往往很重要。</p>
 <p>下面谈谈一些JavaScript数组的相关概念：</p>
 <h2 id="稀疏数组">稀疏数组</h2><hr>
 <p>稀疏就是不稠密，顾名思义，稀疏数组就是<strong>索引不连续</strong>的数组。</p>
 <pre><code><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>);    <span class="comment">//a为空，但a.length=5</span>
 <span class="keyword">var</span> b = [];              <span class="comment">//b.length=0</span>
 b[<span class="number">10000</span>] = <span class="number">1</span>;            <span class="comment">//此时b只有一个元素，但b.length=10001</span>
-</code></pre><p>通常来说，数组的<code>length</code>属性也即数组中元素的个数，如果数组是稀疏的，那么，<code>length</code>的值将大于元素的个数。出现这种情况也是跟JavaScript中数组<code>length</code>属性的特殊性息息相关的。<br>所以，可以通过以上两种方法来创建稀疏数组，但是，实际应用中，遇到创建稀疏数组的情况少之又少。</p>
+</code></pre><p>通常来说，数组的<code>length</code>属性也即数组中元素的个数，如果数组是稀疏的，那么，<code>length</code>的值将大于元素的个数。出现这种情况也是跟JavaScript中数组<code>length</code>属性的特殊性息息相关的。所以，可以通过以上两种方法来创建稀疏数组，但是，实际应用中，遇到创建稀疏数组的情况少之又少。</p>
 <p>注意：当<strong>使用delete操作符来删除数组中元素</strong>，或者<strong>在数组直接量的声明中存在省略值</strong>时，也会造成稀疏数组的出现。</p>
 <pre><code>var <span class="literal">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]<span class="comment">;</span>
 var b = [<span class="number">1</span>,,,]<span class="comment">;          //b.length=3</span>
@@ -119,7 +118,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7ozdtp90006t65ovttejfx1" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7qadoeg000pp05oswzkozf2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -201,7 +200,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7ozdtp60001t65obomxapux" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7qadoee000kp05o48wqjlb3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -213,12 +212,16 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Pokemon Damage Calculator" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/04/hello-world/" class="article-date">
-  <time datetime="2015-03-04T05:36:03.000Z" itemprop="datePublished">2015-03-04</time>
+    <a href="/2014/12/05/Pokemon Damage Calculator/" class="article-date">
+  <time datetime="2014-12-05T02:24:32.000Z" itemprop="datePublished">2014-12-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CodeWars/">CodeWars</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -227,7 +230,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/04/hello-world/">Hello World</a>
+      <a class="article-title" href="/2014/12/05/Pokemon Damage Calculator/">Pokemon Damage Calculator</a>
     </h1>
   
 
@@ -235,22 +238,277 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_141205_illustration.jpg" alt=""></p>
+<p>在<a href="http://www.codewars.com/" target="_blank" rel="external">CodeWars</a>遇到了一个有意思的kata。宠物小精灵战斗计算。立马脑补皮卡，杰尼，小火龙，妙娃。哈哈～废话不多说。题目不难。但离Best Practice还有的学。</p>
+<h1 id="Question：">Question：</h1><p>宠物小精灵战斗值计算。计算公式为：<br><code>damage = 50 * (attack/defense) * effectiveness</code><br>结果要保证为向上取整。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">attack = your attack power</span><br><span class="line">defense = <span class="operator">the</span> opponent’s defense</span><br><span class="line">effectiveness = <span class="operator">the</span> effectiveness <span class="operator">of</span> <span class="operator">the</span> attack based <span class="command"><span class="keyword">on</span> <span class="title">the</span> <span class="title">matchup</span>(<span class="title">explanation</span> <span class="title">below</span>)//众所周知的属性相克啦</span></span><br></pre></td></tr></table></figure>
+<p><strong>Effectiveness:</strong></p>
+<p>很伤： 两倍伤害<br>一般： 正常伤害<br>没啥效果： 0.5倍伤害<br>这里只给出四个主要属性，即：<strong>火，水，草，电</strong>。关系如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fire &gt; grass</span><br><span class="line">fire &lt; water</span><br><span class="line"><span class="constant">fire</span> = electric</span><br><span class="line">water &lt; grass</span><br><span class="line">water &lt; electric</span><br><span class="line"><span class="constant">electric</span> = grass</span><br></pre></td></tr></table></figure>
+<p><strong>另外，各属性对自身都没啥效果。</strong></p>
+<h2 id="First_Solution:">First Solution:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateDamage</span><span class="params">(yourType, opponentType, attack, defense)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> matchs = [<span class="comment">//数据关系初始化</span></span><br><span class="line">        &#123;types: [<span class="string">'fire'</span>, <span class="string">'grass'</span>], effect: <span class="number">2</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'fire'</span>, <span class="string">'water'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'fire'</span>, <span class="string">'electric'</span>], effect: <span class="number">1</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'fire'</span>, <span class="string">'fire'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'grass'</span>, <span class="string">'fire'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'grass'</span>, <span class="string">'water'</span>], effect: <span class="number">2</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'grass'</span>, <span class="string">'electric'</span>], effect: <span class="number">1</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'grass'</span>, <span class="string">'grass'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'water'</span>, <span class="string">'fire'</span>], effect: <span class="number">2</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'water'</span>, <span class="string">'water'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'water'</span>, <span class="string">'electric'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'water'</span>, <span class="string">'grass'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'electric'</span>, <span class="string">'fire'</span>], effect: <span class="number">1</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'electric'</span>, <span class="string">'water'</span>], effect: <span class="number">2</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'electric'</span>, <span class="string">'electric'</span>], effect: <span class="number">0.5</span>&#125;,</span><br><span class="line">        &#123;types: [<span class="string">'electric'</span>, <span class="string">'grass'</span>], effect: <span class="number">1</span>&#125;</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">/*遍历计算造成的影响值*/</span></span><br><span class="line">    <span class="keyword">var</span> effectiveness = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> effective = <span class="number">1</span></span><br><span class="line">        <span class="keyword">var</span> pair = [yourType, opponentType];</span><br><span class="line">        matchs.forEach(<span class="function"><span class="keyword">function</span><span class="params">(item)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(item.types.join() === pair.join()) &#123;</span><br><span class="line">                effective = item.effect</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> effective;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">/*取整*/</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(<span class="number">50</span> * (attack/defense) * effectiveness());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上是很快想出来就写下来的solution。想法很简单，一看就知道能改进，衰。但是没想到竟然通过了测试数据。－_－</p>
+<h2 id="Better_Solution:">Better Solution:</h2><p>经过思考改进后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calculateDamage</span><span class="params">(yourType, opponentType, attack, defense)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> strength = &#123; fire: <span class="string">'grass'</span>, water: <span class="string">'fire'</span>, grass: <span class="string">'water'</span>, electric: <span class="string">'water'</span> &#125;;<span class="comment">//强效的映射对应</span></span><br><span class="line">    <span class="keyword">var</span> effectiveness = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (yourType == opponentType || yourType == strength[opponentType]) &#123;</span><br><span class="line">        effectiveness = <span class="number">0.5</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (opponentType == strength[yourType]) &#123;</span><br><span class="line">        effectiveness = <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.ceil(<span class="number">50</span> * effectiveness * attack / defense);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只考虑强映射。复杂度忽略……</p>
+<p>代码更加简洁，空间复杂度也稍低。而且从对战双方身份互换的角度找出两者的对应关系strength。</p>
+<hr>
+<p>这是一次有趣的小练习。虽然没有复杂的算法作为解决方式，但是充分利用了JavaScript的特性。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/04/hello-world/" data-id="ci7ozdtov0000t65oe2svmehh" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci7qadoe9000ap05ot0lcbfql" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown语法使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/25/markdown语法使用总结/" class="article-date">
+  <time datetime="2014-10-25T15:10:38.000Z" itemprop="datePublished">2014-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/25/markdown语法使用总结/">markdown语法使用总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="引：">引：</h1><p>由于认识到了<a href="http://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>，进而认识了markdown这一简约明了的标记语言。瞬间喜欢上了它。通过最近对它的了解，我发现，写好markdown对快速处理标准格式化的文章大有裨益。甚至还能帮助清晰传统html的结构。<br>目前关于markdown语法介绍的博文和wiki已经汗牛充栋了。而且多为大而全。所以我想整理一下自己在使用过程中感觉舒适而便捷的语法。只是个人喜好,不讨论风格问题。</p>
+<p>全面介绍的一些：</p>
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/Markdown#.E9.93.BE.E6.8E.A5" target="_blank" rel="external">Markdown Wiki</a></li>
+<li><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown语法说明</a></li>
+<li><a href="http://ibruce.info/2013/11/26/markdown/" target="_blank" rel="external">Markdown简明语法</a></li>
+<li><a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="external">献给写作者的 Markdown 新手指南</a></li>
+</ul>
+<p>编辑器(Mac平台)：</p>
+<ul>
+<li>Mou</li>
+<li><a href="http://macdown.uranusjr.com/" target="_blank" rel="external">MacDown</a></li>
+<li>Sublime + MarkdownEditing</li>
+</ul>
+<hr>
+<h1 id="块级元素">块级元素</h1><h2 id="段落">段落</h2><p>行尾<code>两空格＋换行</code>即可。</p>
+<h2 id="标题">标题</h2><pre><code><span class="preprocessor">#           <span class="comment">//h1</span></span>
+<span class="preprocessor">##          <span class="comment">//h2</span></span>
+<span class="preprocessor">###         <span class="comment">//h3</span></span>
+<span class="preprocessor">####        <span class="comment">//h4</span></span>
+<span class="preprocessor">#####       <span class="comment">//h5</span></span>
+</code></pre><h1 id="h1">h1</h1><h2 id="h2">h2</h2><h3 id="h3">h3</h3><h4 id="h4">h4</h4><h5 id="h5">h5</h5><h2 id="区块引用">区块引用</h2><pre><code>&gt; 这是一个引用文本段。    <span class="comment">//注意空格</span>
+&gt; &gt; 还可以嵌套哦。      <span class="comment">//注意空格，在中间</span>
+</code></pre><blockquote>
+<p>这是一个引用文本段。</p>
+<blockquote>
+<p>还可以嵌套哦。</p>
+</blockquote>
+</blockquote>
+<h2 id="列表">列表</h2><h3 id="无序列表">无序列表</h3><pre><code>-<span class="ruby"> <span class="constant">Object</span>       /<span class="regexp">/注意两个空格，一前一后
+</span></span>-<span class="ruby"> <span class="constant">Array</span>
+</span>-<span class="ruby"> <span class="constant">Function</span></span>
+</code></pre><ul>
+<li>Object</li>
+<li>Array</li>
+<li>Function</li>
+</ul>
+<h3 id="有序列表">有序列表</h3><pre><code><span class="number">1.</span> <span class="built_in">Number</span>      <span class="comment">//注意两个空格，一前一后</span>
+<span class="number">2.</span> <span class="built_in">String</span>
+<span class="number">3.</span> <span class="built_in">Boolean</span>
+</code></pre><ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+</ol>
+<h3 id="嵌套列表">嵌套列表</h3><pre><code>-<span class="ruby"> <span class="constant">Primitive</span> <span class="constant">Type</span>       /<span class="regexp">/注意空格对齐至父节点文本开始处
+</span></span>  1. Number
+  2. String
+  3. Boolean
+  4. Null
+  5. Undefined
+-<span class="ruby"> <span class="constant">Object</span> <span class="constant">Type</span>
+</span>  1. Object
+  2. Array
+     -<span class="ruby"> join()
+</span>     -<span class="ruby"> forEach()
+</span>     -<span class="ruby"> ...
+</span>  3. Function
+  4. Date
+  5. RegExp
+</code></pre><ul>
+<li>Primitive Type<ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Null</li>
+<li>Undefined</li>
+</ol>
+</li>
+<li>Object Type<ol>
+<li>Object</li>
+<li>Array<ul>
+<li>join()</li>
+<li>forEach()</li>
+<li>…</li>
+</ul>
+</li>
+<li>Function</li>
+<li>Date</li>
+<li>RegExp</li>
+</ol>
+</li>
+</ul>
+<h2 id="代码块">代码块</h2><p><code>tab</code>or<code>4个空格</code>or<code>～～～</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;    </span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+<h2 id="分割线">分割线</h2><p><code>---</code></p>
+<hr>
+<h1 id="行内元素">行内元素</h1><h2 id="链接">链接</h2><pre><code>[<span class="link_label">这是一个链接</span>](<span class="link_url">url</span>)
+</code></pre><p><a href="">这是一个链接</a></p>
+<h2 id="图片">图片</h2><pre><code>![<span class="link_label">图片名</span>](<span class="link_url">url</span>)
+</code></pre><p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_141025_OnePiece.jpeg" alt="One Piece"></p>
+<h2 id="文本强调">文本强调</h2><pre><code><span class="keyword">*</span>我是斜体<span class="keyword">*</span>
+<span class="keyword">*</span><span class="keyword">*</span>我是粗体<span class="keyword">*</span><span class="keyword">*</span>
+<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>我又粗又斜<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+</code></pre><p><em>我是斜体</em><br><strong>我是粗体</strong><br><strong><em>我又粗又斜</em></strong></p>
+<h2 id="行内代码">行内代码</h2><pre><code>`<span class="tag">code</span> here`
+</code></pre><p><code>code here</code></p>
+<hr>
+<p>好了，以上的markdown语法基本使用已经无忧了。而且是个人比较习惯和喜欢的风格。就整理到这里了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci7qadodk0000p05o9edwvgeu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bower retry 的问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/10/bower retry 的问题解决/" class="article-date">
+  <time datetime="2014-10-10T07:07:54.000Z" itemprop="datePublished">2014-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Bower/">Bower</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/10/bower retry 的问题解决/">bower retry 的问题解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_141010_illustration.png" alt=""><br>感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。</p>
+<p>这次遇到了一个关于<code>Bower</code>的问题。<a href="http://bower.io/" target="_blank" rel="external">Bower</a>是一个基于Node的包管理器。使用起来非常方便。</p>
+<p>目前在学习AngularJs的过程中，发现其官方网站<a href="http://angularjs.org" target="_blank" rel="external">http://angularjs.org</a>和谐严重。又想要拿到最新源码，小费了一翻周折。<strong>PS：</strong>方法有许多。只是写下自己解决问题的过程。</p>
+<p>其实很简单，正常情况下<code>bower install angular</code>即可解决问题。但出现：</p>
+<pre><code>$ bower install angular
+bower retry Request <span class="built_in">to</span> <span class="keyword">https</span>://bower.herokuapp.com/packages/angular failed <span class="operator">with</span> ETIMEDOUT, retrying <span class="operator">in</span> <span class="number">1.1</span>s
+</code></pre><p>问题最后发现是代理设置的原因。解决如下：<br>在项目根目录下新建 <code>.bowerrc</code> 文件。如果已有直接修改即可。</p>
+<pre><code>{
+    "<span class="attribute">directory</span>": <span class="value"><span class="string">"public/components"</span></span>,
+    "<span class="attribute">registry</span>": <span class="value"><span class="string">"http://bower.herokuapp.com"</span></span>,
+    "<span class="attribute">proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span></span>,
+    "<span class="attribute">https-proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span>
+</span>}
+</code></pre><p>由于bower是从github进行源码下载。所以，如果本机有代理，系统代理的环境变量和git的.gitconfig也要预先设置。</p>
+<p>最后问题完美解决。而且也认清到一点：<br><strong>使用命令行安装远程文件，当出现 <code>Request ETIMEOUT</code> 时，首先检查当前的网络连接，如果没有问题。那么很大的可能性是当前的网络代理设置问题造成了访问超时。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7qadoe70005p05o1k8lfk8l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-New Begining" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/09/21/New Begining/" class="article-date">
+  <time datetime="2014-09-21T02:24:32.000Z" itemprop="datePublished">2014-09-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Essay/">Essay</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09/21/New Begining/">New Begining</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>许久没写过东西了，也是时候该写点什么了。New Beginning!</p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_140921_ illustration.jpeg" alt=""></p>
+<p>转眼，来这边已经一年了，改变和成长是有的，但私以为还是欠缺许多。特别是在浏览一些大牛的文章和Geeker们的发现的时候，艳羡之余，却动手不足。</p>
+<p>因朋友<a href="http://www.wonsikin.com/" target="_blank" rel="external">OSK</a>的缘故，接触到<a href="http://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>。瞬间被这种极简小清新风格所吸引。但由于时不时在折腾一些非主观意愿下的外力事件。Blog自己的进程一拖再拖。自我把控和时效管理实在是太差劲。</p>
+<p>目前的话，个人环境已整体迁移到Ubuntu Kylin。下一步就是要在Linux平台下做到相应的技术积累。要学的真的好多啊。一年会不会时间太少 T T。所以，下一步，主要在两大方面着力，时间管理和技术积累。都将会在这里做好自我总结。</p>
+<p>下面的话，简要练习一下Hexo的配置和Markdodown语法，其实好多达人已经总结的很好了。多亏了那么多优秀的先驱。<br><a href="http://ibruce.info" target="_blank" rel="external">不如</a>，<a href="http://zipperary.com" target="_blank" rel="external">zipperary</a>，<a href="http://blog.fens.me" target="_blank" rel="external">粉丝日志</a>。<br>整个了解和学习的过程中参看了好多他们的心血。甚是感激。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci7qadoec000fp05o20opgx17" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
+
     </footer>
   </div>
   
@@ -267,7 +525,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -276,7 +534,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -285,7 +543,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: NaNpx;">JavaScript</a>
+      <a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
     </div>
   </div>
 
@@ -294,7 +552,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -314,7 +572,15 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
           </li>
         
           <li>
-            <a href="/2015/03/04/hello-world/">Hello World</a>
+            <a href="/2014/12/05/Pokemon Damage Calculator/">Pokemon Damage Calculator</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/25/markdown语法使用总结/">markdown语法使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/10/bower retry 的问题解决/">bower retry 的问题解决</a>
           </li>
         
       </ul>

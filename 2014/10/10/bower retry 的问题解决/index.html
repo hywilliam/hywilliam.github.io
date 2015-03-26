@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hywilliam&#39;s Blog</title>
+  <title>bower retry 的问题解决 | hywilliam&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hywilliam's Blog">
-<meta property="og:url" content="http://hywilliam.com/tags/JavaScript/index.html">
+  <meta name="description" content="感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。
+这次遇到了一个关于Bower的问题。Bower是一个基于Node的包管理器。使用起来非常方便。
+目前在学习AngularJs的过程中，发现其官方网站http://angularjs.org和谐严重。又想要拿到最新源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bower retry 的问题解决">
+<meta property="og:url" content="http://hywilliam.com/2014/10/10/bower retry 的问题解决/index.html">
 <meta property="og:site_name" content="hywilliam's Blog">
-<meta property="og:description" content="Personal Blog">
+<meta property="og:description" content="感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。
+这次遇到了一个关于Bower的问题。Bower是一个基于Node的包管理器。使用起来非常方便。
+目前在学习AngularJs的过程中，发现其官方网站http://angularjs.org和谐严重。又想要拿到最新源码">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post_141010_illustration.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hywilliam's Blog">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="bower retry 的问题解决">
+<meta name="twitter:description" content="感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。
+这次遇到了一个关于Bower的问题。Bower是一个基于Node的包管理器。使用起来非常方便。
+目前在学习AngularJs的过程中，发现其官方网站http://angularjs.org和谐严重。又想要拿到最新源码">
 
   
     <link rel="alternative" href="/atom.xml" title="hywilliam&#39;s Blog" type="application/atom+xml">
@@ -61,58 +68,82 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/03/25/JavaScript语言核心学习-Array/" class="archive-article-date">
-  <time datetime="2015-03-25T15:10:38.000Z" itemprop="datePublished">Mar 25</time>
+        <section id="main"><article id="post-bower retry 的问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/10/bower retry 的问题解决/" class="article-date">
+  <time datetime="2014-10-10T07:07:54.000Z" itemprop="datePublished">2014-10-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Bower/">Bower</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/25/JavaScript语言核心学习-Array/">JavaScript语言核心学习(Array)</a>
+    <h1 class="article-title" itemprop="name">
+      bower retry 的问题解决
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" class="archive-article-date">
-  <time datetime="2015-03-24T13:38:03.000Z" itemprop="datePublished">Mar 24</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/03/24/JavaScript语言核心学习（类型，值和变量）/">JavaScript语言核心学习（类型，值和变量）</a>
-    </h1>
-  
+        <p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_141010_illustration.png" alt=""><br>感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。</p>
+<p>这次遇到了一个关于<code>Bower</code>的问题。<a href="http://bower.io/" target="_blank" rel="external">Bower</a>是一个基于Node的包管理器。使用起来非常方便。</p>
+<p>目前在学习AngularJs的过程中，发现其官方网站<a href="http://angularjs.org" target="_blank" rel="external">http://angularjs.org</a>和谐严重。又想要拿到最新源码，小费了一翻周折。<strong>PS：</strong>方法有许多。只是写下自己解决问题的过程。</p>
+<p>其实很简单，正常情况下<code>bower install angular</code>即可解决问题。但出现：</p>
+<pre><code>$ bower install angular
+bower retry Request <span class="built_in">to</span> <span class="keyword">https</span>://bower.herokuapp.com/packages/angular failed <span class="operator">with</span> ETIMEDOUT, retrying <span class="operator">in</span> <span class="number">1.1</span>s
+</code></pre><p>问题最后发现是代理设置的原因。解决如下：<br>在项目根目录下新建 <code>.bowerrc</code> 文件。如果已有直接修改即可。</p>
+<pre><code>{
+    "<span class="attribute">directory</span>": <span class="value"><span class="string">"public/components"</span></span>,
+    "<span class="attribute">registry</span>": <span class="value"><span class="string">"http://bower.herokuapp.com"</span></span>,
+    "<span class="attribute">proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span></span>,
+    "<span class="attribute">https-proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span>
+</span>}
+</code></pre><p>由于bower是从github进行源码下载。所以，如果本机有代理，系统代理的环境变量和git的.gitconfig也要预先设置。</p>
+<p>最后问题完美解决。而且也认清到一点：<br><strong>使用命令行安装远程文件，当出现 <code>Request ETIMEOUT</code> 时，首先检查当前的网络连接，如果没有问题。那么很大的可能性是当前的网络代理设置问题造成了访问超时。</strong></p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7qadoe70005p05o1k8lfk8l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/25/markdown语法使用总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown语法使用总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/21/New Begining/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">New Begining</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">

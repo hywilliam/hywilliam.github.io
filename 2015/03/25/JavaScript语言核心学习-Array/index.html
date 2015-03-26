@@ -10,7 +10,7 @@
 上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。
 其中:
 有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。
-MDN的数组文档是相当详细，所以各个">
+MDN的数组文档是相当详细的，所以各">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript语言核心学习(Array)">
 <meta property="og:url" content="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/index.html">
@@ -20,7 +20,7 @@ MDN的数组文档是相当详细，所以各个">
 上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。
 其中:
 有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。
-MDN的数组文档是相当详细，所以各个">
+MDN的数组文档是相当详细的，所以各">
 <meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post002_Array.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript语言核心学习(Array)">
@@ -29,7 +29,7 @@ MDN的数组文档是相当详细，所以各个">
 上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。
 其中:
 有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。
-MDN的数组文档是相当详细，所以各个">
+MDN的数组文档是相当详细的，所以各">
 
   
     <link rel="alternative" href="/atom.xml" title="hywilliam&#39;s Blog" type="application/atom+xml">
@@ -108,15 +108,14 @@ MDN的数组文档是相当详细，所以各个">
 <p>上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。</p>
 <p><strong>其中:</strong></p>
 <p><strong>有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。</strong></p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">MDN的数组文档</a>是相当详细，所以各个方法，不再一一解释。</p>
-<p>方法虽然可以翻阅文档，但是重在理解和使用。遇到什么情况，采取哪种更加合适的方法往往很重要。</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">MDN的数组文档</a>是相当详细的，所以各个方法，不再一一解释。方法虽然可以翻阅文档，但是重在理解和使用。遇到什么情况，采取哪种更加合适的方法往往很重要。</p>
 <p>下面谈谈一些JavaScript数组的相关概念：</p>
 <h2 id="稀疏数组">稀疏数组</h2><hr>
 <p>稀疏就是不稠密，顾名思义，稀疏数组就是<strong>索引不连续</strong>的数组。</p>
 <pre><code><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>);    <span class="comment">//a为空，但a.length=5</span>
 <span class="keyword">var</span> b = [];              <span class="comment">//b.length=0</span>
 b[<span class="number">10000</span>] = <span class="number">1</span>;            <span class="comment">//此时b只有一个元素，但b.length=10001</span>
-</code></pre><p>通常来说，数组的<code>length</code>属性也即数组中元素的个数，如果数组是稀疏的，那么，<code>length</code>的值将大于元素的个数。出现这种情况也是跟JavaScript中数组<code>length</code>属性的特殊性息息相关的。<br>所以，可以通过以上两种方法来创建稀疏数组，但是，实际应用中，遇到创建稀疏数组的情况少之又少。</p>
+</code></pre><p>通常来说，数组的<code>length</code>属性也即数组中元素的个数，如果数组是稀疏的，那么，<code>length</code>的值将大于元素的个数。出现这种情况也是跟JavaScript中数组<code>length</code>属性的特殊性息息相关的。所以，可以通过以上两种方法来创建稀疏数组，但是，实际应用中，遇到创建稀疏数组的情况少之又少。</p>
 <p>注意：当<strong>使用delete操作符来删除数组中元素</strong>，或者<strong>在数组直接量的声明中存在省略值</strong>时，也会造成稀疏数组的出现。</p>
 <pre><code>var <span class="literal">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]<span class="comment">;</span>
 var b = [<span class="number">1</span>,,,]<span class="comment">;          //b.length=3</span>
@@ -133,7 +132,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7ozdtp90006t65ovttejfx1" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7qadoeg000pp05oswzkozf2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -163,7 +162,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -172,7 +171,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -181,7 +180,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: NaNpx;">JavaScript</a>
+      <a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
     </div>
   </div>
 
@@ -190,7 +189,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -210,7 +209,15 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
           </li>
         
           <li>
-            <a href="/2015/03/04/hello-world/">Hello World</a>
+            <a href="/2014/12/05/Pokemon Damage Calculator/">Pokemon Damage Calculator</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/25/markdown语法使用总结/">markdown语法使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/10/bower retry 的问题解决/">bower retry 的问题解决</a>
           </li>
         
       </ul>
