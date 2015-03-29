@@ -90,7 +90,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>今天把JavaScript有关数组的知识，尽可能多的进行一下整理。老规矩，看图说话：</p>
-<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post002_Array.png" alt="Array"></p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150325_Array.png" alt="Array"></p>
 <p>上图列出了JavaScript中数组的创建，数组原型及其与对象的关系，而且列出了几乎所有相关的数组方法。</p>
 <p><strong>其中:</strong></p>
 <p><strong>有红色边框的部分方法是会对初始数组造成影响的。而且，还需注意的是：EC5中的数组方法都不会修改它们调用的原始数组的，但是传递给这些方法的函数却是可以修改它们的。</strong></p>
@@ -113,12 +113,28 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
 </ul>
 <p>最后要说明的就是，当元素是<code>undefined</code>或空时，虽然有微妙的差别，但都是稀疏的表现。  </p>
 <h2 id="数组类型检测">数组类型检测</h2><hr>
+<p>因为数组是一种特殊的Object类型，重载了许多有用的方法和属性，而且由于数组有序序列的特殊性，在JavaScript中，同等操作数组相比对象要快许多。所以，给出一个对象类型，来检测其是否为数组，通常还是蛮有用的。</p>
+<p>EC5的话，数组类型的判断使用<code>isArray()</code>即可达到目的。不过要注意，<code>isArray()</code>是构造函数Array的一个方法。并不是<code>Array.prototype</code>的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">var</span> b = &#123;&#125;;</span><br><span class="line"><span class="built_in">Array</span>.isArray(a);       <span class="comment">//=&gt;true</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(b);       <span class="comment">//=&gt;false</span></span><br></pre></td></tr></table></figure>
+<p>但是，若是不支持EC5的环境该怎么办？就需要我们自己手动检测了。<br>其中，一些简单情形的话，使用<code>instanceof</code>操作符即可达到目的。但是由于整个文档复杂性的存在。<code>instanceof</code>往往不能作为一个可靠的数组检测方法。可以采用的解决方案是<strong>检查对象的类属性值</strong>。因此在EC3环境中我们可以这样写<code>isArray()</code>函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isArray = <span class="built_in">Function</span>.isArray || <span class="function"><span class="keyword">function</span><span class="params">(o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> o === <span class="string">"object"</span> &amp;&amp;</span><br><span class="line">    <span class="built_in">Object</span>.prototype.toString.call(o) === <span class="string">"[object Array]"</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这段代码还是挺有意思的。首先判断<code>isArray()</code>是否有声明。若有，直接返回，若没有，声明匿名函数赋给<code>isArray</code>变量。</p>
+<p>我们来重点看这个匿名函数，直接就return，可谓简单，并没有逻辑判断。那是因为它充分用到了<code>&amp;&amp;</code>的短路操作。我们知道Object类型的基础<code>toString()</code>方法返回值信息量很少，只有一个字符串<code>&quot;[object Object]&quot;</code>，两个object分别指当前类型和构造函数类型。但又因为Array类型在自身的prototype对<code>toString()</code>方法进行了重载，我们直接<code>o.toString()</code>并不会得到期待的结果。所以，这里就用到了函数的<code>call()</code>方法，这也是很有趣很强大一个方法。可以简而言之使方法在所给作用域中执行。就相当于在o中运行了基础的<code>Object.prototype.toString()</code>方法。这样就可以来进行判断了。</p>
+<p>PS：别的对象类型（Data，Regexp…）也是可以通过此方法思路进行判断的。</p>
 <h2 id="类数组对象">类数组对象</h2><hr>
+<p>我们刚才有提到，数组比常规的对象多了很多有用的特性和方法，而且针对数组的操作也会明显便捷和方便。由于数组本质就是对象，那么我们能否来构造对象类型的数组呢。答案是肯定的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> duck = &#123;</span><br><span class="line">    length: <span class="number">2</span>,</span><br><span class="line">    <span class="string">"0"</span>: <span class="string">"Duck"</span>,</span><br><span class="line">    <span class="string">"1"</span>: <span class="string">"hello"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样，就创建了一个<strong>类数组对象</strong>，我们还能对其进行遍历：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bar = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = duck.length; i &lt; len; i++) &#123;</span><br><span class="line">    bar += duck[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是，我们知道，Array中的所有方法都是声明或重载在<code>Array.prototype</code>中的，如开篇的导图。那么，我们的类数组对象并没有继承<code>Array.prototype</code>，怎么来使用数组方法呢。这里还是要请出<code>Function.call()</code>来进行间接调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.join.call(duck, <span class="string">"~"</span>);   <span class="comment">//"Duck~hello"</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.map.call(duck, <span class="function"><span class="keyword">function</span><span class="params">(x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x.toUpperCase();         <span class="comment">//["DUCK", "HELLO"]</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>问题还是需要在实践中继续总结。这些基础的整理希望能帮助学习，如遇更多问题，还好回过头复习。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7qaiegi000pqf5oq9orcmpq" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7u30aux000plq5oshcloz67" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -158,7 +174,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
         <p>接触前端有一段时间了，却一直也没有花整块儿的时间对JS核心做深入学习。所以这次打算把犀牛书彻底啃下来。对一些核心知识点做个系统总结，还能顺带提升下写blog的软技能。</p>
 <p>本文主要整理了JS中的类型，值，变量相关问题。废话不多说，直接上图。</p>
-<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/7NIU_Post001_JSType.png" alt="JSType"></p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150324_JSType.png" alt="JSType"></p>
 <h1 id="类型">类型</h1><hr>
 <p>JavaScript的数据类型分为两类：<strong>原始类型(Primitive Type)</strong>和<strong>对象类型(Object Type)</strong>。</p>
 <p>原始类型也即所谓<strong>原始值</strong>。它们是不能通过动态改变的。<br>而这里的对象类型实际上是广义的对象值。<br>因为JavaScript是动态弱类型的语言，所以，一些传统复杂类型在JavaScript中都被当作对象来处理。</p>
@@ -200,7 +216,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7qaiegh000kqf5o8hw1508i" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7u30auv000klq5od65laf4p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -258,7 +274,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci7qaiegc000aqf5o9lqpgw6v" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci7u30auq000alq5o7zdnutvn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
@@ -399,7 +415,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci7qaiefm0000qf5oze3n15h8" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci7u30atz0000lq5o3ruocncg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -456,7 +472,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7qaiega0005qf5ot9wbccyp" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7u30auo0005lq5okrn9y8rs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
@@ -504,7 +520,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci7qaiegf000fqf5om7eqf9f7" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci7u30aut000flq5oxuntoj8p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
