@@ -93,7 +93,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>做了个基础demo，控制div属性值，期间突发奇想，扩展了下，加了随机变色，随机变宽高的功能。其中，随机改变颜色值，感觉自己写的不甚完美，Google了下发现方法有许多，而且高大上毁了。这里来看一下：</p>
+        <p>做了个基础demo，<a href="http://7xicnp.com1.z0.glb.clouddn.com/控制div属性（随机颜色）.html" target="_blank">控制div属性值</a>，期间突发奇想，扩展了下，加了随机变色，随机变宽高的功能。其中，随机改变颜色值，感觉自己写的不甚完美，Google了下发现方法有许多，而且高大上毁了。这里来看一下：</p>
 <hr>
 <h2 id="自己的基础解决方案：">自己的基础解决方案：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> vals = [<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>],</span><br><span class="line">       color = <span class="string">'#'</span>;</span><br><span class="line">       </span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)&#123;</span><br><span class="line">       color += vals[<span class="built_in">Math</span>.random() * <span class="number">16</span> | <span class="number">0</span>];  <span class="comment">//位运算默认把浮点型转为整型，与0的位运算并不会改变原数值</span></span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>看起来好像也没什么问题，不过看过大牛的实现后，会发现自己弱爆了。而且发现我的方法其实也是有一个bug在的。先看一些掉渣天的写法：</p>
@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci7y46s7m000sx65oyltmj2c2" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci7y6bxir000s7q5ojpbhez6x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
