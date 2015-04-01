@@ -63,6 +63,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript生成随机颜色值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/01/JavaScript生成随机颜色值/" class="article-date">
+  <time datetime="2015-04-01T00:54:41.000Z" itemprop="datePublished">2015-04-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/01/JavaScript生成随机颜色值/">JavaScript生成随机颜色值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做了个基础demo，控制div属性值，期间突发奇想，扩展了下，加了随机变色，随机变宽高的功能。其中，随机改变颜色值，感觉自己写的不甚完美，Google了下发现方法有许多，而且高大上毁了。这里来看一下：</p>
+<hr>
+<h2 id="自己的基础解决方案：">自己的基础解决方案：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> vals = [<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>],</span><br><span class="line">       color = <span class="string">'#'</span>;</span><br><span class="line">       </span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)&#123;</span><br><span class="line">       color += vals[<span class="built_in">Math</span>.random() * <span class="number">16</span> | <span class="number">0</span>];  <span class="comment">//位运算默认把浮点型转为整型，与0的位运算并不会改变原数值</span></span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看起来好像也没什么问题，不过看过大牛的实现后，会发现自己弱爆了。而且发现我的方法其实也是有一个bug在的。先看一些掉渣天的写法：</p>
+<h2 id="实现1">实现1</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span> + (<span class="function"><span class="keyword">function</span><span class="params">(color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (color += <span class="string">'0123456789ABCDEF'</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">16</span>)])</span><br><span class="line">        &amp;&amp; (color.length === <span class="number">6</span>) ? color : <span class="built_in">arguments</span>.callee(color);</span><br><span class="line">    &#125;)(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>充分利用了 &amp;&amp; 短路操作，条件运算符来进行逻辑判断，最终的<code>arguments.callee(color)</code>形成递归，十分巧妙。</p>
+<h2 id="实现2">实现2</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span> + <span class="built_in">Math</span>.floor((<span class="built_in">Math</span>.random() * <span class="number">16777215</span>)).toString(<span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个写法更是逆天，它是直接获取颜色值得十进制值，然后再转为16进制的写法。这里的<code>16777215</code>便是<code>#ffffff</code>。我们知道十六进制颜色值范围是在<code>#000000(黑)~~#ffffff(白)</code>。而这种写法也是网上最常见的一种。</p>
+<hr>
+<p>虽然还有一些别的很牛掰的实现方式，但我研究过之后，发现无论是写法还是思想巧妙程度上，都没有以上两种来的实在。而且基本是在它们之上所得的变形。</p>
+<p>好了，现在开始说Bug问题。而且我打算提炼出适合自己的方法。  </p>
+<p>我原先的写法，不够简洁，而且很传统，好处是比较直接，读起来不费劲儿。16个数组元素呢，其实也可以换做一整个字符串来处理的，但是这里问题不大，不算症结。主要的问题在<code>Math.random() * 16 | 0</code>, 其实这句相当于<code>Math.floor(Math.random() * 16)</code>。因为我们知道，<code>Math.random()</code>得出的值是<strong>大于等于0且小于1</strong>的。所以，这里是永远无法取到 ‘F’ 值的。其实，这也是这里三个实现的通病，有一定的颜色值漏掉。我的方法和实现1漏掉的更多一些，而实现2则是永远取不到白色值。<br><strong>解决方案：</strong>其实这里把<code>Math.floor()</code>改为<code>Math.round()</code>就可以了，但是很奇怪很少见这么写的。</p>
+<h2 id="总结">总结</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span> + (<span class="string">'00000'</span> +</span><br><span class="line">    (<span class="built_in">Math</span>.random() * <span class="number">0x1000000</span> | <span class="number">0</span>).toString(<span class="number">16</span>).toUpperCase()).slice(-<span class="number">6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>0x1000000 = 0xffffff + 1</code>保证了选取范围，与0进行位运算，<code>0x000000~0xffffff</code>范围内的所有整数值都有可能得到了，不会漏值，拼接 ‘00000’，切片-6，保证了值的长度为6位，不会出现颜色值偏差。’#38F’跟 ‘#00038F’颜色值肯定是不同的。</p>
+<hr>
+<p>目前来看，我认为，这应该是最nice的随机颜色值生成方案了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci7y46s7m000sx65oyltmj2c2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript语言核心学习-Array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/25/JavaScript语言核心学习-Array/" class="article-date">
@@ -134,7 +192,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7u49fug000pr15ohfez4c79" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci7y46s7k000px65o5cboiz5k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -216,7 +274,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7u49fuf000kr15ok8cewmqj" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci7y46s7i000kx65oq657jwy8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -274,7 +332,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci7u49fua000ar15o1jb76vz7" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci7y46s7e000ax65ofiiseen8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
@@ -415,7 +473,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci7u49ftx0000r15oraxnvqim" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci7y46s6p0000x65ovwptld1e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -472,7 +530,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7u49fu80005r15ofmrtisuq" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci7y46s7d0005x65orywu7awy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
@@ -520,7 +578,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci7u49fuc000fr15okskfgee5" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci7y46s7g000fx65o6uqybh9x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
@@ -541,7 +599,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -550,7 +608,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -568,7 +626,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -578,6 +636,10 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/01/JavaScript生成随机颜色值/">JavaScript生成随机颜色值</a>
+          </li>
         
           <li>
             <a href="/2015/03/25/JavaScript语言核心学习-Array/">JavaScript语言核心学习(Array)</a>
@@ -593,10 +655,6 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
         
           <li>
             <a href="/2014/10/25/markdown语法使用总结/">markdown语法使用总结</a>
-          </li>
-        
-          <li>
-            <a href="/2014/10/10/bower retry 的问题解决/">bower retry 的问题解决</a>
           </li>
         
       </ul>
