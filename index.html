@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci809w88m000xes5oakim3u1n" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci809ybn9000xfp5os6x77j6h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -192,7 +192,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci809w88k000ues5ooa1grsgm" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci809ybn7000ufp5ofyck8fx2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -274,7 +274,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci809w88i000pes5owio3t2z4" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci809ybn5000pfp5ohd7g9g93" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -332,10 +332,96 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci809w88e000fes5o7m3y49dr" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci809ybn1000ffp5oz12l90cn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-彻底理解CSS中的定位问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/02/彻底理解CSS中的定位问题/" class="article-date">
+  <time datetime="2014-11-02T05:51:07.000Z" itemprop="datePublished">2014-11-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/02/彻底理解CSS中的定位问题/">彻底理解CSS中的定位问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS中进行元素定位，老生常谈的话题了。可是，就是这么基础的东西却又真真切切地是CSS的难点所在。特别是要进行一些复杂定位的情况时。以往只是清楚这么些个概念，这次来个彻彻底底的整理。</p>
+<h2 id="盒模型">盒模型</h2><p>首先，要谈定位，不得不先说说盒模型。盒模型是CSS的基石。它指定各种元素在页面中该如何显示，它们之间什么关系，甚至它们交互起来有哪些显示上的变化。如图所示：<br><img src="" alt="盒模型"><br>上图所示是chrome下元素盒模型的查看。这个元素框由内容，内边距，边框和外边距组成。这四个组成部分便可以理解为盒模型的概念。</p>
+<p>我们可以看到，这个元素宽度是<code>100px的content、10px的padding、1px的border、8px的margin</code>组成，那么整个元素的宽便是(100+10+1+8)px。高度亦然。</p>
+<p><strong>盒模型是每个页面元素显示的方式。</strong><br><em>这里关于IE6的盒模型，不予置评。</em></p>
+<h3 id="block&amp;inline">block&amp;inline</h3><p>谈到盒模型，不得不谈的就是块级元素（块框，如<code>p, h1, div, ul, li...</code>）和行内元素（行内框，如<code>strong, span, img, a...</code>）。<br>它们可以算作HTML的一种分类，也可以算作CSS的一种分类。这里我们把它们作为CSS的分类来看，主要是因为<strong>块级元素和行内元素在盒模型的显示上有所区别。</strong></p>
+<p>首先，块级框在文档流中是一个挨一个按照HTML中的声明顺序垂直排列显示的，而行内框则是在一行中水平排列，如果排满则到下一行继续水平排列。</p>
+<p>其次，我们知道，每个块级框的高度都是可以自定义设置的。而<strong>行内框的高度却总是和本行最高的行内元素一致的，也就是说，单个行内框来显式设置高度，垂直内外边距及边框，对行内框的高度是无影响的。</strong>要想设置也只能设置整行的<code>inline-height</code>。<br>行内框的水平间距就无影响了，跟盒模型的处理一致。</p>
+<p>最后，通过display属性，我们是可以在块框和行内框之间进行自由转换的，但是也需注意的是，当把块框<code>display: inline-block</code>时，它一样能够具有块级框的行为，也即能够显示定义，宽高，垂直内外边距。</p>
+<h3 id="垂直外边距叠加">垂直外边距叠加</h3><p>最后关于盒模型还有一点，就是垂直外边距的叠加问题了。其实说白了就是，两<strong>个块框间的垂直外边距由他们<code>margin-top</code>和<code>margin-bottom</code>中值大的那个确定。</strong><br>另外：只有static文档流中块框的垂直外边距才有外边距叠加，行内框，浮动，或者绝对定位之类的是没有的。</p>
+<h2 id="相对与绝对定位">相对与绝对定位</h2><p>相对，绝对定位从概念上来讲并不是多么复杂的概念，有的时候麻烦就麻烦在元素多且杂的时候。所以，还是要理清楚到底是咋回事的。这里推荐<strong>使用firefox的3D页面来感受这两个定位。</strong></p>
+<p>概念上来说：</p>
+<ul>
+<li>相对定位：“相对于”其元素本身在文档流中的初始位置进行定位。</li>
+<li>绝对定位：“相对于”其最近的已定位祖先元素进行定位。若无，则相对于初始包含块（body，html）。</li>
+</ul>
+<p>它们的区别主要在，<strong>对于相对定位来说，无论元素是否移动，其所占的原先空间是保留不变的。而绝对定位的元素就跟文档流无关了。也不会占据文档中的空间，更不会影响别的元素定位。除非覆盖。</strong>还是上图看一下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#first</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> burlywood</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="id">#second</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> powderblue</span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="" alt="相对定位"></p>
+<p>我们看到DIV1原先所在文档流中的位置，并没有被占据。</p>
+<p>再来看绝对定位：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#first</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> burlywood</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="id">#second</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> powderblue</span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="" alt="绝对定位"></p>
+<p>我们发现DIV2顶了上去，好像在文档流中DIV1已经不存在了一样。确实，你可以理解为，绝对定位的DIV1已经脱离了文档流。</p>
+<p>那么：问题来了，如果上面的代码定位部分我这么写：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#first</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="id">#second</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>刷新页面的话我们会发现，DIV1不见了，为什么呢。其实这也是绝对定位的元素被忽视的一种体现。我们打开3D模式，会看到标识出了DIV1位置跟刚才一样，只不过，被覆盖了。为什么DIV2加了个相对定位，就覆盖了DIV1.没有定位的话就不行？</p>
+<p><img src="" alt="覆盖DIV1"></p>
+<p>其实这里有一个隐藏概念，<strong>定位元素的栈</strong>。这也就是为什么用3D视图能更好地去理解的原因了。</p>
+<p>当你给一个元素增添<code>position</code>属性的那时起，就相当于，把这个元素打上了定位栈的标记，而这个栈怎么理解呢，垂直于页面，怎么去操作呢，<code>z-index</code>。看这个属性名想来也知道怎么理解了，z轴索引。所以，当<code>z-index</code>属性值越高时，框在栈中的位置就越高，也就是说，在页面里越向上，而默认的<code>z-index</code>为0。</p>
+<p>那么，这里如果我们不想让DIV1被覆盖就so easy了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#first</span><span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">1</span></span></span>;</span><br><span class="line"><span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>至此，相对绝对定位总结完了。在多个定位情况存在时，要注意，<strong>看到相对找自己（原本位置），看到绝对找父亲（祖先已定位成功的元素）</strong>。</p>
+<h2 id="浮动">浮动</h2><p>终于轮到浮动了。经过刚才的两种定位解读。浮动就好理解许多了。因为浮动元素也是脱离文档流的，所以表现起来有点类似绝对定位，就像它不存在一样。<br>而在实际的生产应用中，最主要的则是浮动清理。<br>所以这里我就主要说一下，浮动清理的几种主流技术：</p>
+<p>假设我们要对以下布局中的p进行浮动清理。来保证p中的文本不会对img进行环绕。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">img</span> <span class="rules">&#123; <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>; <span class="rule">&#125;</span></span></span><br><span class="line"><span class="tag">p</span> <span class="rules">&#123; <span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>; <span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"/img/pic.jpg"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>a lot of texts.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span>&gt;</span>a lot of texts.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="空标签">空标签</h3><p>这种方式在没有现成空标签可用的情况下，往往需要手动添加一个空元素，对空元素应用clear属性。虽然实现了希望的效果，但添加了额外的代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"clear"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.clear</span> <span class="rules">&#123; <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>; <span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="容器浮动">容器浮动</h3><p>如果不想添加额外的标记，我们也可以将div容器进行同步的浮动。但显而易见，这只是饮鸩止渴的方式，下一个元素，我们依旧要想办法处理。如果整个网页都浮动起来，原则上可行，但成本太大也更不可控。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.container</span> <span class="rules">&#123; <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>; <span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="overflow">overflow</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.container</span> <span class="rules">&#123; <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>; <span class="rule">&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>当将overflow的值设置为auto或hidden时，有一个自动清理包含浮动元素的副作用。往往用在小范围，比如列表或者菜单。所以并不适合所有情况。</p>
+<h3 id="父标签+伪类">父标签+伪类</h3><p>这种方式的原理其实和空标签差不多。但是对可读性和页面来讲更加友好。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container:after &#123;</span><br><span class="line">    content: ".";       //指定内容的末尾添加一个"."，可以是任何内容。</span><br><span class="line">    height: 0;          //不占据垂直空间</span><br><span class="line">    visibility: hidden; //在页面中隐藏</span><br><span class="line">    display: block;     //</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/11/02/彻底理解CSS中的定位问题/" data-id="ci809zat0001gfp5o7rv3di84" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 
     </footer>
   </div>
@@ -473,7 +559,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci809w87k0000es5ojbrdcc7e" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci809ybm80000fp5oluhe8b1y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -527,7 +613,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci809w8850005es5o21t0honv" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci809ybmw0005fp5omkyt7exm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -584,7 +670,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci809w88b000aes5o9kjguagn" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci809ybmy000afp5o1w70uidy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
@@ -632,7 +718,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci809w88g000kes5oxaxc7vbr" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci809ybn4000kfp5oq84ohg7s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
@@ -653,7 +739,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -662,7 +748,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -671,7 +757,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 10px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+      <a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 15px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
     </div>
   </div>
 
@@ -680,7 +766,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -708,7 +794,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
           </li>
         
           <li>
-            <a href="/2014/10/25/markdown语法使用总结/">markdown语法使用总结</a>
+            <a href="/2014/11/02/彻底理解CSS中的定位问题/">彻底理解CSS中的定位问题</a>
           </li>
         
       </ul>
