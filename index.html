@@ -63,6 +63,184 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-百度web前端技术公开课" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/05/百度web前端技术公开课/" class="article-date">
+  <time datetime="2015-04-05T01:51:07.000Z" itemprop="datePublished">2015-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Essay/">Essay</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/05/百度web前端技术公开课/">百度web前端技术公开课</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开宗明义，接触前端也有很长一段时间了。最近偶然发现了<strong><a href="http://www.chuanke.com/?mod=student&amp;act=study&amp;courseid=106504" target="_blank" rel="external">百度Web前端技术公开课</a></strong>，是百度的FEX做的。不得不说是我看到过的入门级视频中非常非常好的。涉及的知识点全都是干货和当下的痛点。老师们也很有条理和幽默。</p>
+<p>所以，忍不住想进行个整理，温故而知新嘛。老师每每提到讲过的知识点都可以扩展开来进行更进一步的认知和挖掘，这个工作一步步做。有些我以前学习总结过，有些可能清楚但模棱两可。以后慢慢总结。就当算是基础前端技能表了。</p>
+<h2 id="1、web概述">1、web概述</h2><hr>
+<h2 id="2、HTML/CSS">2、HTML/CSS</h2><h3 id="HTML">HTML</h3><p>源自SGML。<br>重点在布局。<br>HTML5设计原则：<br>发送时要保守，接手时要开放。</p>
+<p>.html与.htm的区别：历史原因，dos系统文件名是8+3格式，最多只支持3个字符的后缀名。现在没差。</p>
+<p>&lt;!DOCTYPE&gt;<br>DTD<br>每个标签作为一个实体，不同DTD声明的不同的标签设计。</p>
+<p>替换元素：<strong>属性决定内容</strong></p>
+<ul>
+<li><img></li>
+<li><input></li>
+<li><select></select></li>
+<li><object></object></li>
+<li><video></video></li>
+<li><iframe>
+
+</iframe></li>
+</ul>
+<p>大多数是非替换元素。</p>
+<p>标签分类：</p>
+<ul>
+<li>文档结构类</li>
+<li>文本结构类</li>
+<li>文字字体类</li>
+<li>列表控制类<br>通过分类<strong>便于理解语义化</strong>。</li>
+</ul>
+<p>web3.0 语义化，数据链接，开放数据。</p>
+<p>HTML5新增图<br><img src="" alt="HTML5新增图"></p>
+<h4 id="HTML布局">HTML布局</h4><div>
+
+<p>语义化：根据内容先行理解，去写标签。才能更好地让搜索引擎理解。</p>
+<p>内容为先。</p>
+<h3 id="CSS">CSS</h3><p>历史：随着HTML发展而发展。晚育HTML整体发展线。</p>
+<p>嵌入、内联、外部CSS</p>
+<p>选择器</p>
+<h4 id="CSS布局">CSS布局</h4><p>盒模型<br>块、内联元素（block/inline)</p>
+<p>浮动<br>浮动清除：</p>
+<ul>
+<li>空标签清除（不好）</li>
+<li>父标签+伪元素清除（好）</li>
+</ul>
+<p>双栏布局，一边固定，一边自适应</p>
+<p>定位position：</p>
+<ul>
+<li>static</li>
+<li>fixed</li>
+<li>relative</li>
+<li>absolute</li>
+</ul>
+<p>绝对定位+相对定位</p>
+<p>无法做曲线排版 CSS shape</p>
+<hr>
+<p>问：</p>
+<ul>
+<li>怎么写HTML更快？</li>
+<li>CSS怎么更好复用？less</li>
+<li>开发工具如何提高开发效率？</li>
+<li>HTML/CSS哪些不足？</li>
+</ul>
+<h2 id="3、JavaScript">3、JavaScript</h2><p>ECMAScript|DOM|BOM</p>
+<p>render Engine—webkit<br>JS Engine—V8</p>
+<p>调试tool<br>console   (info, dir)<br>,debugger</p>
+<p>understore.js 全局变量 _<br>jQuery 全局变量 $</p>
+<p>“use strict”; EC5</p>
+<p>语句 {}</p>
+<p>变量<br>Global vs Local —var<br>作用域<br>声明，赋值问题：</p>
+<p>数据类型<br>5 基本 1 Obj<br>typeof 运算符</p>
+<p>undefined<br>null<br>Boolean<br>Number—NaN<br>String</p>
+<p>字符串拼接 经过了几步操作<br>lang + “JavaScript”<br>字符串转换 a += ‘’;</p>
+<p>Object<br>模拟继承</p>
+<p>操作符</p>
+<p>‘1’- -‘1’<br>!!<br>&amp;&amp; || 短路特性   trick 可替换if</p>
+<p>表达式，语句<br>（）强制运算 闭包</p>
+<hr>
+<p>for…in</p>
+<p>with</p>
+<p>无返回值：</p>
+<ul>
+<li>;</li>
+<li>var a = b;</li>
+<li>function foo(){}</li>
+<li>break/continue/</li>
+<li>label</li>
+</ul>
+<p>eval的返回值是参数中最后一个有返回值的表达式的返回值。<br>void 返回值 undefined</p>
+<p>Function</p>
+<p>arguments 实参<br>parameter 形参</p>
+<p>arguments.length与传递参数的长度一致，arguments[i]与传递的相同位置的参数一一对应<br>按照老师作业做得的练习<a href="https://github.com/hywilliam/UserfulScripts/blob/master/OverlodFunc.js" target="_blank" rel="external">JavaScript模拟函数重载</a><br>写的一般，但是感觉老师给出的作业事例也不甚完美。自己也仔细想过去做的，以后看能不能继续优化。</p>
+<p>变量，作用域，内存</p>
+<hr>
+<p>arguments.callee()</p>
+<p>call,apply,bind</p>
+<p>全局内建对象</p>
+<hr>
+<h2 id="4、DOM">4、DOM</h2><p>节点：</p>
+<ul>
+<li>元素</li>
+<li>文本</li>
+<li>属性</li>
+<li>注释</li>
+<li>文档</li>
+</ul>
+<p>节点层次，DOM树</p>
+<p>DOM增删改查<br>1、查<br>getElement(s)By*<br>取父节点，子节点<br>兄弟节点</p>
+<p>2、改<br>改属性：setAttribute()<br>        .(点)</p>
+<p>改内容：innerHTML<br>       innerText<br>       textContent()</p>
+<p>3、增<br>创节点：createElement()<br>追加子节点：appendChild()</p>
+<p>文档碎片：createDocumentFragment();</p>
+<p>4、删<br>只能父节点杀：removeChild()</p>
+<hr>
+<h2 id="5、JavaScript事件编程模型">5、JavaScript事件编程模型</h2><p>事件添加：</p>
+<ul>
+<li>节点属性显式声明</li>
+<li>节点属性动态绑定</li>
+<li>事件监听的方式（浏览器更兼容）</li>
+</ul>
+<p>事件移除：</p>
+<ul>
+<li>onclick = function(){};</li>
+<li>removeEventListener();</li>
+</ul>
+<p>事件冒泡（传播）<br>禁止冒泡：stopPropagation()</p>
+<p>阻止事件默认行为：preventDefault()</p>
+<p>chrome下，取页面元素，$0可取在console下操作</p>
+<hr>
+<h2 id="6、错误处理&amp;jQuery">6、错误处理&amp;jQuery</h2><p>万能的$<br>选择器<br>原生与jquery对象转换</p>
+<p>节点操作</p>
+<p>事件绑定</p>
+<p>多个屏幕联动显示一个demo</p>
+<hr>
+<h2 id="7、AJAX">7、AJAX</h2><p>AJAX工作流程<br>XSS攻击<br>跨域</p>
+<p>使用步骤</p>
+<p>原生AJAX<br>类库做了什么<br>格式化数据<br>前端模板<br>分页AJAX<br>jQuery动态事件绑定<br>搜索需求</p>
+<hr>
+<h2 id="8、Web_Socket">8、Web Socket</h2><hr>
+<h2 id="9、HTML5_&amp;_CSS3">9、HTML5 &amp; CSS3</h2><hr>
+<h2 id="10、Node-js">10、Node.js</h2><hr>
+<h2 id="11、WebGL">11、WebGL</h2></div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2015/04/05/百度web前端技术公开课/" data-id="ci83yhqg600006p5otp9ugqg3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-Socket/">Web Socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript生成随机颜色值" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/01/JavaScript生成随机颜色值/" class="article-date">
@@ -109,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci81esgkj00104r5oumpqg4bo" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci83yhqhb001g6p5orwfvfhwc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -192,7 +370,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci81esgkg000x4r5o6517vflb" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci83yhqh8001d6p5otmoawc9z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -274,7 +452,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci81esgke000s4r5oicz0cwex" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci83yhqh600196p5oi5c24s70" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -332,7 +510,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci81esgka000i4r5o4wtfd062" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci83yhqh100106p5o2sxcyj9a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
@@ -429,7 +607,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/11/02/彻底理解CSS中的定位问题/" data-id="ci81esgje00004r5odw1q1rtd" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/11/02/彻底理解CSS中的定位问题/" data-id="ci83yhqgs000j6p5os1rl89ct" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -570,7 +748,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci81esgk200054r5oeetuxox6" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci83yhqgu000n6p5o1zar0o8a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -626,7 +804,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci81esgk5000a4r5ofy976gwe" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci83yhqgw000s6p5od3s7nqzr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -683,7 +861,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci81esgk7000d4r5ox0uhrju3" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci83yhqgy000v6p5ofqj9988b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
@@ -731,7 +909,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci81esgkc000n4r5o6knm0qes" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci83yhqh400156p5oulxm92iw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
@@ -752,7 +930,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -761,7 +939,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Socket/">Web Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -770,7 +948,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 15px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a>
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a><a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 15px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/DOM/" style="font-size: 10px;">DOM</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/HTML/" style="font-size: 10px;">HTML</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a><a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a><a href="/tags/Web-Socket/" style="font-size: 10px;">Web Socket</a><a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a>
     </div>
   </div>
 
@@ -779,7 +957,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -789,6 +967,10 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/05/百度web前端技术公开课/">百度web前端技术公开课</a>
+          </li>
         
           <li>
             <a href="/2015/04/01/JavaScript生成随机颜色值/">JavaScript生成随机颜色值</a>
@@ -804,10 +986,6 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
         
           <li>
             <a href="/2014/12/05/Pokemon Damage Calculator/">Pokemon Damage Calculator</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/02/彻底理解CSS中的定位问题/">彻底理解CSS中的定位问题</a>
           </li>
         
       </ul>
