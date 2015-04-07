@@ -91,40 +91,25 @@
       
         <p>开宗明义，接触前端也有很长一段时间了。最近偶然发现了<strong><a href="http://www.chuanke.com/?mod=student&amp;act=study&amp;courseid=106504" target="_blank" rel="external">百度Web前端技术公开课</a></strong>，是百度的FEX做的。不得不说是我看到过的入门级视频中非常非常好的。涉及的知识点全都是干货和当下的痛点。老师们也很有条理和幽默。</p>
 <p>所以，忍不住想进行个整理，温故而知新嘛。老师每每提到讲过的知识点都可以扩展开来进行更进一步的认知和挖掘，这个工作一步步做。有些我以前学习总结过，有些可能清楚但模棱两可。以后慢慢总结。就当算是基础前端技能表了。</p>
-<h2 id="1、web概述">1、web概述</h2><hr>
-<h2 id="2、HTML/CSS">2、HTML/CSS</h2><h3 id="HTML">HTML</h3><p>源自SGML。<br>重点在布局。<br>HTML5设计原则：<br>发送时要保守，接手时要开放。</p>
+<h2 id="2、HTML/CSS">2、HTML/CSS</h2><h3 id="HTML">HTML</h3><p>源自SGML，重点在布局。HTML5设计原则：发送时要保守，接手时要开放。</p>
 <p>.html与.htm的区别：历史原因，dos系统文件名是8+3格式，最多只支持3个字符的后缀名。现在没差。</p>
-<p>&lt;!DOCTYPE&gt;<br>DTD<br>每个标签作为一个实体，不同DTD声明的不同的标签设计。</p>
-<p>替换元素：<strong>属性决定内容</strong></p>
-<ul>
-<li><img></li>
-<li><input></li>
-<li><select></select></li>
-<li><object></object></li>
-<li><video></video></li>
-<li><iframe>
-
-</iframe></li>
-</ul>
-<p>大多数是非替换元素。</p>
-<p>标签分类：</p>
+<p>&lt;!DOCTYPE&gt;，DTD，每个标签作为一个实体，不同DTD声明的不同的标签设计。</p>
+<p>替换元素：<strong>属性决定内容</strong>，大多数是非替换元素。</p>
+<p>标签分类（通过分类<strong>便于理解语义化</strong>）：</p>
 <ul>
 <li>文档结构类</li>
 <li>文本结构类</li>
 <li>文字字体类</li>
-<li>列表控制类<br>通过分类<strong>便于理解语义化</strong>。</li>
+<li>列表控制类</li>
 </ul>
 <p>web3.0 语义化，数据链接，开放数据。</p>
-<p>HTML5新增图<br><img src="" alt="HTML5新增图"></p>
-<h4 id="HTML布局">HTML布局</h4><div>
-
-<p>语义化：根据内容先行理解，去写标签。才能更好地让搜索引擎理解。</p>
-<p>内容为先。</p>
-<h3 id="CSS">CSS</h3><p>历史：随着HTML发展而发展。晚育HTML整体发展线。</p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_NewInHTML5.png" alt="HTML5新增图"></p>
+<h4 id="HTML布局">HTML布局</h4><p>语义化：根据内容先行理解，去写标签。才能更好地让搜索引擎理解。内容为先。</p>
+<h3 id="CSS">CSS</h3><p>历史：随着HTML发展而发展。晚于HTML整体发展线。</p>
 <p>嵌入、内联、外部CSS</p>
 <p>选择器</p>
-<h4 id="CSS布局">CSS布局</h4><p>盒模型<br>块、内联元素（block/inline)</p>
-<p>浮动<br>浮动清除：</p>
+<h4 id="CSS布局">CSS布局</h4><p>盒模型：块、内联元素（block/inline)</p>
+<p>浮动清除：</p>
 <ul>
 <li>空标签清除（不好）</li>
 <li>父标签+伪元素清除（好）</li>
@@ -139,13 +124,12 @@
 </ul>
 <p>绝对定位+相对定位</p>
 <p>无法做曲线排版 CSS shape</p>
-<hr>
 <p>问：</p>
 <ul>
-<li>怎么写HTML更快？</li>
-<li>CSS怎么更好复用？less</li>
+<li>怎么写HTML更快？| 编译器</li>
+<li>CSS怎么更好复用？less </li>
 <li>开发工具如何提高开发效率？</li>
-<li>HTML/CSS哪些不足？</li>
+<li>HTML/CSS哪些不足？| 标准统一，浏览器支持上，逻辑处理</li>
 </ul>
 <h2 id="3、JavaScript">3、JavaScript</h2><p>ECMAScript|DOM|BOM</p>
 <p>render Engine—webkit<br>JS Engine—V8</p>
@@ -156,14 +140,13 @@
 <p>变量<br>Global vs Local —var<br>作用域<br>声明，赋值问题：</p>
 <p>数据类型<br>5 基本 1 Obj<br>typeof 运算符</p>
 <p>undefined<br>null<br>Boolean<br>Number—NaN<br>String</p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_ConfuseArray.png" alt="ConfuseArray"></p>
 <p>字符串拼接 经过了几步操作<br>lang + “JavaScript”<br>字符串转换 a += ‘’;</p>
 <p>Object<br>模拟继承</p>
 <p>操作符</p>
 <p>‘1’- -‘1’<br>!!<br>&amp;&amp; || 短路特性   trick 可替换if</p>
 <p>表达式，语句<br>（）强制运算 闭包</p>
-<hr>
-<p>for…in</p>
-<p>with</p>
+<p>for…in|with</p>
 <p>无返回值：</p>
 <ul>
 <li>;</li>
@@ -177,11 +160,9 @@
 <p>arguments 实参<br>parameter 形参</p>
 <p>arguments.length与传递参数的长度一致，arguments[i]与传递的相同位置的参数一一对应<br>按照老师作业做得的练习<a href="https://github.com/hywilliam/UserfulScripts/blob/master/OverlodFunc.js" target="_blank" rel="external">JavaScript模拟函数重载</a><br>写的一般，但是感觉老师给出的作业事例也不甚完美。自己也仔细想过去做的，以后看能不能继续优化。</p>
 <p>变量，作用域，内存</p>
-<hr>
 <p>arguments.callee()</p>
 <p>call,apply,bind</p>
 <p>全局内建对象</p>
-<hr>
 <h2 id="4、DOM">4、DOM</h2><p>节点：</p>
 <ul>
 <li>元素</li>
@@ -191,13 +172,12 @@
 <li>文档</li>
 </ul>
 <p>节点层次，DOM树</p>
-<p>DOM增删改查<br>1、查<br>getElement(s)By*<br>取父节点，子节点<br>兄弟节点</p>
-<p>2、改<br>改属性：setAttribute()<br>        .(点)</p>
+<p>DOM增删改查<br><strong>1、查</strong><br>getElement(s)By*<br>取父节点，子节点<br>兄弟节点</p>
+<p><strong>2、改</strong><br>改属性：setAttribute()<br>        .(点)</p>
 <p>改内容：innerHTML<br>       innerText<br>       textContent()</p>
-<p>3、增<br>创节点：createElement()<br>追加子节点：appendChild()</p>
+<p><strong>3、增</strong><br>创节点：createElement()<br>追加子节点：appendChild()</p>
 <p>文档碎片：createDocumentFragment();</p>
-<p>4、删<br>只能父节点杀：removeChild()</p>
-<hr>
+<p><strong>4、删</strong><br>只能父节点杀：removeChild()</p>
 <h2 id="5、JavaScript事件编程模型">5、JavaScript事件编程模型</h2><p>事件添加：</p>
 <ul>
 <li>节点属性显式声明</li>
@@ -212,59 +192,61 @@
 <p>事件冒泡（传播）<br>禁止冒泡：stopPropagation()</p>
 <p>阻止事件默认行为：preventDefault()</p>
 <p>chrome下，取页面元素，$0可取在console下操作</p>
-<hr>
 <h2 id="6、错误处理&amp;jQuery">6、错误处理&amp;jQuery</h2><p>万能的$<br>选择器<br>原生与jquery对象转换</p>
 <p>节点操作</p>
 <p>事件绑定</p>
-<p>多个屏幕联动显示一个demo</p>
-<hr>
-<h2 id="7、AJAX">7、AJAX</h2><p>AJAX工作流程<br>XSS攻击<br>跨域</p>
+<p>多个屏幕联动显示一个demo：多个屏幕打开的是同一个页面，每个设备独有一个frame，在整个window可共享位置信息。小球传播到边界点是进行跨边界的传值接收然后渲染计算。</p>
+<h2 id="7、AJAX">7、AJAX</h2><p>AJAX工作流程、XSS攻击、跨域<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_AJAX.png" alt="AJAX工作流程"></p>
 <p>使用步骤</p>
-<p>原生AJAX<br>类库做了什么<br>格式化数据<br>前端模板<br>分页AJAX<br>jQuery动态事件绑定<br>搜索需求</p>
+<p>原生AJAX</p>
+<p>类库做了什么</p>
+<p>格式化数据</p>
+<p>前端模板</p>
+<p>分页AJAX</p>
+<p>jQuery动态事件绑定</p>
+<p>搜索需求</p>
 <hr>
-<h2 id="8、Web_Socket">8、Web Socket</h2><p>应用：实时性要求比较高的应用游戏。<br>where：网易Pomelo<br>       百度Clouda</p>
-<p>什么是websocket？<br>HTML5新协议，服务器客户端全双工。</p>
-<p>局域网聊天</p>
+<h2 id="8、Web_Socket">8、Web Socket</h2><p>应用：实时性要求比较高的应用游戏。where：网易Pomelo、百度Clouda<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_WhatIsWebSocket.png" alt=""><br>什么是websocket？<br>HTML5新协议，服务器客户端全双工。<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_WhyWebSocket.png" alt=""><br>局域网聊天</p>
 <p>本地前端二维码生成</p>
-<hr>
-<h2 id="9、HTML5_&amp;_CSS3">9、HTML5 &amp; CSS3</h2><p>HTML5一些改变<br>canvas画图<br>生成gif<br>CSS3渐变<br>轮播图<br>SVG<br>cookie, SessionStorage,LocalStorage区别</p>
-<hr>
-<h2 id="10、Node-js">10、Node.js</h2><ul>
-<li>Node.js</li>
-<li>响应式web设计</li>
-<li>web组件</li>
-<li>webGL</li>
-</ul>
-<p>chrome v8引擎<br>事件驱动，非阻塞IO<br>适用于实时IO密集型应用</p>
-<p>同步异步<br>模块化|CommonJS</p>
+<h2 id="9、HTML5_&amp;_CSS3">9、HTML5 &amp; CSS3</h2><p>HTML5一些改变</p>
+<p>canvas画图</p>
+<p>生成gif</p>
+<p>CSS3渐变</p>
+<p>轮播图</p>
+<p>SVG</p>
+<p>问：<br>cookie, SessionStorage,LocalStorage区别？</p>
+<p>SessionStorage与LocalStorage是HTML5的webStorage，客户端的持久化存储。它们俩的生命周期不同，Session只存在于当前标签页，关闭即消失，新标签页也是新的Session。Local在设定的时间段内即使浏览器关闭也依旧存在。跨标签页。cookie很小，只是存储用户信息。</p>
+<h2 id="10、Node-js">10、Node.js</h2><p>chrome v8引擎、事件驱动，非阻塞IO、适用于实时IO密集型应用</p>
+<p>同步异步、模块化|CommonJS</p>
 <ul>
 <li>引用模块|require</li>
 <li>输出模块|exports</li>
 </ul>
 <p>NPM</p>
-<p>web开发中的node</p>
+<p>web开发中的node<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_NodeInWeb.png" alt="web开发中的node"></p>
 <p>常建库：connect.js|express.js|Soket.io</p>
 <p>数据库开发：通常Mongodb、redis、 Mysql</p>
 <p>百度FIS</p>
 <p>响应式web设计</p>
 <p>关键技术：</p>
 <ul>
-<li>流式布局|px==&gt;%|px==&gt;em</li>
+<li>流式布局|px ==&gt; % | px ==&gt; em</li>
 <li>媒体查询</li>
 <li>响应式多媒体|宽度百分比</li>
 </ul>
-<p>box-sizing</p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_BoxSizing.png" alt="box-sizing"><br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_MediaQuery.png" alt=""></p>
 <p>选择合适的资源<br>屏幕大小<br>屏幕ppi像素密度==》高分辨率图<br>网络状况</p>
 <p>方案：</p>
 <p>img的srcset属性<br>picture元素<br>借助脚本</p>
 <p>web组件化：</p>
-<hr>
-<h2 id="11、WebGL">11、WebGL</h2><p>three.js<br>数据可视化</p>
-</div>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_ImplantMap1.png" alt=""></p>
+<p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_ImplantMap2.png" alt=""></p>
+<h2 id="11、WebGL">11、WebGL</h2><p>three.js、数据可视化、学习曲线陡。<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150405_WebGL.png" alt=""></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/04/05/百度web前端技术公开课/" data-id="ci87fcz850000i75ojys48gra" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/04/05/百度web前端技术公开课/" data-id="ci87iozoy0000r55o5b10f062" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-Socket/">Web Socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebGL/">WebGL</a></li></ul>
@@ -322,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci87fcz9b001gi75olpzxfbqo" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/04/01/JavaScript生成随机颜色值/" data-id="ci87iozpw001gr55oarjg6y56" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -405,7 +387,7 @@ delete <span class="literal">a</span>[<span class="number">0</span>]<span class=
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci87fcz99001di75okwmsnhqz" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/25/JavaScript语言核心学习-Array/" data-id="ci87iozpt001dr55ojg5imykz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -487,7 +469,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci87fcz970019i75oz75o1u06" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" data-id="ci87iozpq0019r55osasvrhst" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -545,7 +527,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci87fcz920010i75okiisq3d6" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/12/05/Pokemon Damage Calculator/" data-id="ci87iozpl0010r55ounw0cp2w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeWars/">CodeWars</a></li></ul>
@@ -642,7 +624,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/11/02/彻底理解CSS中的定位问题/" data-id="ci87fcz8s000ji75oqcj1tsv5" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/11/02/彻底理解CSS中的定位问题/" data-id="ci87iozpb000jr55o0zuusbk1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -783,7 +765,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci87fcz8u000ni75oou2o2khp" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/25/markdown语法使用总结/" data-id="ci87iozpd000nr55ohndb2gcw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
@@ -839,7 +821,7 @@ s.bar = <span class="number">4</span>;               <span class="comment">//设
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci87fcz8w000si75oh5t7pegx" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/15/div居中的几种方式/" data-id="ci87iozpg000sr55o1zhjyrxi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -896,7 +878,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci87fcz8y000vi75ov1x83tbg" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci87iozpi000vr55oxr3onneu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
@@ -944,7 +926,7 @@ bower retry Request <span class="built_in">to</span> <span class="keyword">https
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci87fcz950015i75o64nbksb8" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci87iozpo0015r55odh8vgvtm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
