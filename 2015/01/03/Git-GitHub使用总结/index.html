@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hywilliam&#39;s Blog</title>
+  <title>Git/GitHub使用总结 | hywilliam&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hywilliam's Blog">
-<meta property="og:url" content="http://hywilliam.com/archives/2015/04/index.html">
+  <meta name="description" content="目前来讲，Git的使用多用于Github。基础性的知识，就不多做解释了。以下只记录一些自己使用过程中遇到的坑和解决方案，随时更新。看似简单的Git也需要日积月累的使用，只看一些基础的讲解，显然不能熟练啊。附上大神链接:
+
+廖雪峰Git教程
+Git简易指南
+。。。
+
+fork的项目副本怎么与源项目的更新保持同步如题，我们在开发过程中为了保证不污染源项目，通常fork一份远程副本然后再clone到自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git/GitHub使用总结">
+<meta property="og:url" content="http://hywilliam.com/2015/01/03/Git-GitHub使用总结/index.html">
 <meta property="og:site_name" content="hywilliam's Blog">
-<meta property="og:description" content="Personal Blog">
+<meta property="og:description" content="目前来讲，Git的使用多用于Github。基础性的知识，就不多做解释了。以下只记录一些自己使用过程中遇到的坑和解决方案，随时更新。看似简单的Git也需要日积月累的使用，只看一些基础的讲解，显然不能熟练啊。附上大神链接:
+
+廖雪峰Git教程
+Git简易指南
+。。。
+
+fork的项目副本怎么与源项目的更新保持同步如题，我们在开发过程中为了保证不污染源项目，通常fork一份远程副本然后再clone到自己">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_GitRemote.png">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_AddRemote.png">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_GitRemote2.png">
+<meta property="og:image" content="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_FetchRemote.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hywilliam's Blog">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="Git/GitHub使用总结">
+<meta name="twitter:description" content="目前来讲，Git的使用多用于Github。基础性的知识，就不多做解释了。以下只记录一些自己使用过程中遇到的坑和解决方案，随时更新。看似简单的Git也需要日积月累的使用，只看一些基础的讲解，显然不能熟练啊。附上大神链接:
+
+廖雪峰Git教程
+Git简易指南
+。。。
+
+fork的项目副本怎么与源项目的更新保持同步如题，我们在开发过程中为了保证不污染源项目，通常fork一份远程副本然后再clone到自己">
 
   
     <link rel="alternative" href="/atom.xml" title="hywilliam&#39;s Blog" type="application/atom+xml">
@@ -61,77 +83,86 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/09/JavaScript定时器和线程模型/" class="archive-article-date">
-  <time datetime="2015-04-09T15:28:10.000Z" itemprop="datePublished">Apr 9</time>
+        <section id="main"><article id="post-Git-GitHub使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/03/Git-GitHub使用总结/" class="article-date">
+  <time datetime="2015-01-03T02:40:39.000Z" itemprop="datePublished">2015-01-03</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/09/JavaScript定时器和线程模型/">JavaScript定时器和线程模型</a>
+    <h1 class="article-title" itemprop="name">
+      Git/GitHub使用总结
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/05/百度web前端技术公开课/" class="archive-article-date">
-  <time datetime="2015-04-05T01:51:07.000Z" itemprop="datePublished">Apr 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/05/百度web前端技术公开课/">百度web前端技术公开课</a>
-    </h1>
-  
+        <p>目前来讲，Git的使用多用于Github。基础性的知识，就不多做解释了。以下只记录一些自己使用过程中遇到的坑和解决方案，随时更新。看似简单的Git也需要日积月累的使用，只看一些基础的讲解，显然不能熟练啊。附上大神链接:</p>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰Git教程</a></li>
+<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">Git简易指南</a></li>
+<li>。。。</li>
+</ul>
+<h2 id="fork的项目副本怎么与源项目的更新保持同步">fork的项目副本怎么与源项目的更新保持同步</h2><p>如题，我们在开发过程中为了保证不污染源项目，通常fork一份远程副本然后再clone到自己本地进行开发修改。而后再适时push到自己的远端，继而pull request到源项目等待review。但是，经常有可能源项目进行了更新，而自己的远程副本没法实时同步，导致版本冲突。</p>
+<p>解决问题需要明白此处有三个版本库的关系。远程源项目，自己的源项目副本，本地版本库。</p>
+<p>我们首先查看当前本地版本库与远端库的关联情况<img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_GitRemote.png" alt=""><br>以上两行代码分别代表本地进行<strong>git pull</strong> 和 <strong>git push</strong> 所关联的远端库。而这个origin远端是自己fork的项目副本。因为我们的项目副本已经过期，所以我们需要添加一个最新的源项目关联至我们的本地库。<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_AddRemote.png" alt=""><br>这里命令格式为<code>git remote add [upstream] [url]</code>，upstream是自定义的远端repo name，url为源项目地址。这个时候我们再查看本地的远端库情况：<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_GitRemote2.png" alt=""><br>会发现，除了自己本有的副本origin还多了添加的源项目upstream。<br>接下来，我们获取源项目的最新更新<br><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_150103_FetchRemote.png" alt=""><br>发现多了一个分支，我们要做的就是在本地将新更新的分支和本地master进行合并。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">merge</span> upstream/<span class="keyword">master</span></span></span><br></pre></td></tr></table></figure>
+<p>现在我们的本地repo已经和源项目保持了一致，但是，我们github上fork过的副本还是up-to-date的。最后一步就so easy了，我们只需将本地repo 再push到远端即可。<code>git push origin master</code></p>
+<hr>
+<p>最后，总结下来，当github上fork的副本和源项目不一致时的解决方案：</p>
+<ol>
+<li><code>git remote add upstream [源url]</code>  ——  增添源项目本地关联</li>
+<li><code>git fetch upstream</code>  ——  获取源项目更新</li>
+<li><code>git merge upstream/master</code>  —— 合并源项目到本地</li>
+<li><code>git push origin master</code>  ——  push本地repo到自己的fork副本</li>
+</ol>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/01/JavaScript生成随机颜色值/" class="archive-article-date">
-  <time datetime="2015-04-01T00:54:41.000Z" itemprop="datePublished">Apr 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/01/JavaScript生成随机颜色值/">JavaScript生成随机颜色值</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2015/01/03/Git-GitHub使用总结/" data-id="ci8fbybw600000s5oyox88q2v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/24/JavaScript语言核心学习（类型，值和变量）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript语言核心学习（类型，值和变量）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/05/Pokemon Damage Calculator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Pokemon Damage Calculator</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">

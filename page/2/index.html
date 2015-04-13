@@ -63,6 +63,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-bower retry 的问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/10/bower retry 的问题解决/" class="article-date">
+  <time datetime="2014-10-10T07:07:54.000Z" itemprop="datePublished">2014-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Bower/">Bower</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/10/bower retry 的问题解决/">bower retry 的问题解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7xi94a.com1.z0.glb.clouddn.com/Post_141010_illustration.png" alt=""><br>感觉每天都有新的JavaScript库，框架或者衍生工具发布，让人应接不暇。而自己连目前已经成熟或者有了充分应用的那些还都没有很好地加以学习。仍处在蹒跚学步状态，实在对自己感到捉急。</p>
+<p>这次遇到了一个关于<code>Bower</code>的问题。<a href="http://bower.io/" target="_blank" rel="external">Bower</a>是一个基于Node的包管理器。使用起来非常方便。</p>
+<p>目前在学习AngularJs的过程中，发现其官方网站<a href="http://angularjs.org" target="_blank" rel="external">http://angularjs.org</a>和谐严重。又想要拿到最新源码，小费了一翻周折。<strong>PS：</strong>方法有许多。只是写下自己解决问题的过程。</p>
+<p>其实很简单，正常情况下<code>bower install angular</code>即可解决问题。但出现：</p>
+<pre><code>$ bower install angular
+bower retry Request <span class="built_in">to</span> <span class="keyword">https</span>://bower.herokuapp.com/packages/angular failed <span class="operator">with</span> ETIMEDOUT, retrying <span class="operator">in</span> <span class="number">1.1</span>s
+</code></pre><p>问题最后发现是代理设置的原因。解决如下：<br>在项目根目录下新建 <code>.bowerrc</code> 文件。如果已有直接修改即可。</p>
+<pre><code>{
+    "<span class="attribute">directory</span>": <span class="value"><span class="string">"public/components"</span></span>,
+    "<span class="attribute">registry</span>": <span class="value"><span class="string">"http://bower.herokuapp.com"</span></span>,
+    "<span class="attribute">proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span></span>,
+    "<span class="attribute">https-proxy</span>": <span class="value"><span class="string">"http://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;PROXY_IP&gt;:&lt;PROXY_PORT&gt;"</span>
+</span>}
+</code></pre><p>由于bower是从github进行源码下载。所以，如果本机有代理，系统代理的环境变量和git的.gitconfig也要预先设置。</p>
+<p>最后问题完美解决。而且也认清到一点：<br><strong>使用命令行安装远程文件，当出现 <code>Request ETIMEOUT</code> 时，首先检查当前的网络连接，如果没有问题。那么很大的可能性是当前的网络代理设置问题造成了访问超时。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hywilliam.com/2014/10/10/bower retry 的问题解决/" data-id="ci8fbxghx000v0j5o9n275w8a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-New Begining" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/09/21/New Begining/" class="article-date">
@@ -99,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci8elml0n0015a65o0lxs9djk" class="article-share-link">Share</a>
+      <a data-url="http://hywilliam.com/2014/09/21/New Begining/" data-id="ci8fbxgi300150j5oevypkmzb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/">Essay</a></li></ul>
@@ -124,7 +181,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Bower/">Bower</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CodeWars/">CodeWars</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -133,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Socket/">Web Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bower/">Bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeWars/">CodeWars</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOM/">DOM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Socket/">Web Socket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebGL/">WebGL</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -142,7 +199,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a><a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 15px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/DOM/" style="font-size: 10px;">DOM</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/HTML/" style="font-size: 10px;">HTML</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a><a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a><a href="/tags/Web-Socket/" style="font-size: 10px;">Web Socket</a><a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a>
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a><a href="/tags/Bower/" style="font-size: 10px;">Bower</a><a href="/tags/CSS/" style="font-size: 15px;">CSS</a><a href="/tags/CodeWars/" style="font-size: 10px;">CodeWars</a><a href="/tags/DOM/" style="font-size: 10px;">DOM</a><a href="/tags/Essay/" style="font-size: 10px;">Essay</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a><a href="/tags/HTML/" style="font-size: 10px;">HTML</a><a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a><a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a><a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a><a href="/tags/Web-Socket/" style="font-size: 10px;">Web Socket</a><a href="/tags/WebGL/" style="font-size: 10px;">WebGL</a>
     </div>
   </div>
 
@@ -151,7 +208,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
